@@ -28,7 +28,7 @@ class LoginController extends AbstractController
                 $request->getSession()->set('username', $username);
 
                 // Redirigir al usuario a la página deseada (por ejemplo, el controlador de asistencia)
-                return $this->redirectToRoute('/admin');
+                return $this->redirectToRoute('admin');
             } else {
                 // Manejar la autenticación fallida
                 return $this->render('login.html.twig', [
@@ -52,6 +52,8 @@ class LoginController extends AbstractController
         $validUsers = [
             'Wong' => '123',
             'Sam' => '321',
+            'Docent' => '567',
+            'Fam' => '891',
             // Agregar más usuarios según sea necesario
         ];
 

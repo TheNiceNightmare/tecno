@@ -3,11 +3,6 @@ login:
     path: /login
     controller: App\Controller\LoginController::login
 
-Asistencia_route:
-    path: /asistencia
-    # Aquí especifica el controlador y método al que debe dirigirse esta ruta
-    controller: App\Controller\Admin\AsistenciaController::class
-
 controllers:
     resource:
         path: ../src/Controller/
