@@ -54,6 +54,8 @@ class LoginController extends AbstractController
             'Sam' => '321',
             'Docent' => '567',
             'Fam' => '891',
+            'Joel' => '098',
+            'Ellie' => '111',
             // Agregar más usuarios según sea necesario
         ];
 
