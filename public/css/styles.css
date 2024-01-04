@@ -4,12 +4,23 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #7b98b5; /* Color de fondo para el cuerpo */
+    background-color: #96bbe1; /* Color de fondo para el cuerpo */
+}
+
+.header {
+    text-align: center;
+    background-color: #96bbe1; /* Fondo blanco para el encabezado */
+    padding: 5px 0;/* Ajuste de espaciado en el encabezado */
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+}
+
+.logo {
+    max-width: 200px; /* Ancho máximo para el logo */
 }
 
 .container {
     max-width: 400px;
-    margin: 100px auto;
+    margin: 10px auto; /* Ajuste de margen superior */
     background-color: #ffffff;
     padding: 20px;
     border-radius: 8px;
