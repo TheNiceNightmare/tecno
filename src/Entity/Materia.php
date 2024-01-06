@@ -23,10 +23,10 @@ class Materia
     #[ORM\Column]
     private ?bool $activo = true;
 
-    #[ORM\OneToMany(mappedBy: 'materia', targetEntity: ParaleloMateria::class)]
+    #[ORM\OneToMany(mappedBy: 'materia', targetEntity: ParaleloMateria::class, cascade: ["remove"])]
     private Collection $paraleloMaterias;
 
-    #[ORM\OneToMany(mappedBy: 'Materia', targetEntity: MateriaDocente::class)]
+    #[ORM\OneToMany(mappedBy: 'docente', targetEntity: MateriaDocente::class, cascade: ["remove"])]
     private Collection $materiaDocentes;
 
     public function __construct()

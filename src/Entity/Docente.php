@@ -32,7 +32,7 @@ class Docente
     #[ORM\Column(length: 20)]
     private ?string $identificacion = null;
 
-    #[ORM\OneToMany(mappedBy: 'docente', targetEntity: MateriaDocente::class)]
+    #[ORM\OneToMany(mappedBy: 'docente', targetEntity: MateriaDocente::class, cascade: ["remove"])]
     private Collection $materiaDocentes;
 
     #[ORM\Column]

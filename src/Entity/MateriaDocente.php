@@ -25,7 +25,7 @@ class MateriaDocente
     #[ORM\JoinColumn(nullable: false)]
     private ?Docente $docente = null;
 
-    #[ORM\OneToMany(mappedBy: 'materiaDocente', targetEntity: Asistencia::class)]
+    #[ORM\OneToMany(mappedBy: 'materiaDocente', targetEntity: Asistencia::class , cascade: ["remove"])]
     private Collection $asistencias;
 
     #[ORM\Column]
