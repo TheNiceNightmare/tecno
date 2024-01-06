@@ -25,7 +25,7 @@ class EstudianteParalelo
     #[ORM\JoinColumn(nullable: false)]
     private ?Paralelo $paralelo = null;
 
-    #[ORM\OneToMany(mappedBy: 'estudianteParalelo', targetEntity: Asistencia::class)]
+    #[ORM\OneToMany(mappedBy: 'estudianteParalelo', targetEntity: Asistencia::class, cascade: ["remove"])]
     private Collection $asistencias;
 
     #[ORM\Column]

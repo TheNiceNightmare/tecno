@@ -12,6 +12,9 @@ use Doctrine\ORM\Mapping as ORM;
 #[ApiResource]
 class Paralelo
 {
+
+
+    
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
@@ -23,21 +26,23 @@ class Paralelo
     #[ORM\Column]
     private ?bool $activo = true;
 
-    #[ORM\OneToMany(mappedBy: 'paralelo', targetEntity: EstudianteParalelo::class)]
+    #[ORM\OneToMany(mappedBy: 'paralelo', targetEntity: EstudianteParalelo::class, cascade : ["remove"])]
     private Collection $estudianteParalelos;
 
     #[ORM\ManyToOne(inversedBy: 'paralelos')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Curso $curso = null;
 
-    #[ORM\OneToMany(mappedBy: 'paralelo', targetEntity: ParaleloMateria::class)]
+    #[ORM\OneToMany(mappedBy: 'paralelo', targetEntity: ParaleloMateria::class, cascade : ["remove"])]
     private Collection $paraleloMaterias;
+    
 
     public function __construct()
     {
         $this->estudianteParalelos = new ArrayCollection();
         $this->paraleloMaterias = new ArrayCollection();
     }
+    
 
     public function fullName(){
         return $this->nombre . ' (' . $this->getCurso() . ')';

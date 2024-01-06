@@ -23,7 +23,7 @@ class Curso
     #[ORM\Column]
     private ?bool $activo = true;
 
-    #[ORM\OneToMany(mappedBy: 'curso', targetEntity: Paralelo::class)]
+    #[ORM\OneToMany(mappedBy: 'curso', targetEntity: Paralelo::class, cascade: ["remove"])]
     private Collection $paralelos;
 
     public function __construct()
